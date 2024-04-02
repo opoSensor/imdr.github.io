@@ -372,9 +372,22 @@ div#newsD{
   height: 23px;
   background-color: #F8E2F1;
   position: relative;
-  animation: myfirst 5s linear 2s infinite alternate;
+  animation: effect 2s linear infinite;
 }
 #div1 {animation-timing-function: NEWS;}
+@keyframes effect {
+            0% {
+                background: linear-gradient(#008000, #00FF00);
+                -webkit-background-clip: text;
+            }
+ 
+            100% {
+                background: linear-gradient(#3CE7D7, #000FFF);
+                -webkit-background-clip: text;
+            }
+        }
+
+
 @keyframes myfirst {
   0%   {background-color:#F8E2F1; left:0px; top:0px;}
   25%  {background-color:yellow; left:800px; top:0px;}
