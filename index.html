@@ -25,7 +25,7 @@
 <td id="layout-content">
 
 <div id="toptitle">
-<h1>Smart portable opioid biosensors </font></h1>
+<h1>Smart portable opioid biosensors <img src="jingshuName.JPG" style="vertical-align:middle"></font></h1>
 </div>
 
   
@@ -35,38 +35,8 @@
   <div class="slide"><img src="sensor.png" alt="Image 3"></div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.carousel .slide');
-      let currentIndex = 0;
 
-      function updateSlides() {
-          slides.forEach((slide, index) => {
-              slide.classList.remove('active', 'previous', 'next');
-              slide.style.opacity = '0';
-          });
-
-          slides[currentIndex].classList.add('active');
-          slides[currentIndex].style.opacity = '1';
-
-          let previousIndex = (currentIndex - 1 + slides.length) % slides.length;
-          let nextIndex = (currentIndex + 1) % slides.length;
-
-          slides[previousIndex].classList.add('previous');
-          slides[nextIndex].classList.add('next');
-          slides[previousIndex].style.opacity = '0.3';
-          slides[nextIndex].style.opacity = '0.3';
-      }
-
-      function shiftSlide() {
-          currentIndex = (currentIndex + 1) % slides.length;
-          updateSlides();
-      }
-
-      updateSlides();
-      setInterval(shiftSlide, 3000);
-  });
-</script>
+<script src="slides.js"></script>
 
 
 <h2><b>Brief Introduction</b></span></font></h2>
