@@ -1,0 +1,54 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 400px; /* Height of carousel */
+    width: 70%; /* Increased width of carousel */
+    margin: auto; /* Center the carousel on the page */
+}
+
+.slide {
+    position: absolute;
+    width: 50; /* Each slide takes a third of the carousel width */
+    height: 100%; /* Each slide takes full height of the carousel */
+    transition: all 0.5s ease;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1); /* Adjust scale to ensure consistency */
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.slide img {
+    max-height: 100%; /* Height of the image to match slide */
+    max-width: 100%; /* Width of the image to match slide */
+    object-fit: contain; /* Fit the image aspect ratio without cropping */
+    background-color: white; /* Set the background color to white */
+}
+
+.active {
+    z-index: 2;
+    opacity: 1;
+    transform: translateX(-50%) scale(1); /* Full scale for active slide */
+}
+
+.previous,
+.next {
+    z-index: 1;
+    opacity: 0.3;
+    transform: translateX(-50%) scale(0.7); /* Slightly reduced scale for inactive slides */
+}
+
+/* Positioning previous and next to slightly overlap with the central image */
+.previous {
+    transform: translateX(calc(-50% - 10%)) scale(0.7);
+}
+
+.next {
+    transform: translateX(calc(-50% + 10%)) scale(0.7);
+}
