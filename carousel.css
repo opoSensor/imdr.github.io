@@ -9,7 +9,7 @@
     margin: auto; /* Center the carousel on the page */
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 1500px) {
     .carousel {
         width: 100vw; /* Increase width for small screens */
     }
