@@ -4,9 +4,18 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-    height: 400px; /* Height of carousel */
-    width: 70%; /* Increased width of carousel */
+    height: 40vh; /* Responsive height based on the viewport */
+    width: 70vw; /* Responsive width based on the viewport */
     margin: auto; /* Center the carousel on the page */
+}
+
+@media (max-width: 2000px) {
+    .carousel {
+        width: 100vw; /* Increase width for small screens */
+    }
+    .slide img {
+        max-height: 50vh; /* Increase the height for smaller screens */
+    }
 }
 
 .slide {
@@ -29,6 +38,7 @@
     max-width: 100%; /* Width of the image to match slide */
     object-fit: contain; /* Fit the image aspect ratio without cropping */
     background-color: white; /* Set the background color to white */
+    margin: 0;
 }
 
 .active {
