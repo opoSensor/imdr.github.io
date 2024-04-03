@@ -5,8 +5,8 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="carousel.css">
 <title>Smart portable opioid biosensors</title>
-
 </head>
 
 <body>
@@ -29,8 +29,45 @@
 </div>
 
   
+<div class="carousel">
+  <div class="slide"><img src="arch.png" alt="Image 1"></div>
+  <div class="slide"><img src="approach.png" alt="Image 2"></div>
+  <div class="slide"><img src="sensor.png" alt="Image 3"></div>
+</div>
 
-<p><img  style='height: 250; width: auto; object-fit: contain' src="arch.png" alt="The Overview"height="350" class="center" /></p>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.carousel .slide');
+      let currentIndex = 0;
+
+      function updateSlides() {
+          slides.forEach((slide, index) => {
+              slide.classList.remove('active', 'previous', 'next');
+              slide.style.opacity = '0';
+          });
+
+          slides[currentIndex].classList.add('active');
+          slides[currentIndex].style.opacity = '1';
+
+          let previousIndex = (currentIndex - 1 + slides.length) % slides.length;
+          let nextIndex = (currentIndex + 1) % slides.length;
+
+          slides[previousIndex].classList.add('previous');
+          slides[nextIndex].classList.add('next');
+          slides[previousIndex].style.opacity = '0.3';
+          slides[nextIndex].style.opacity = '0.3';
+      }
+
+      function shiftSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateSlides();
+      }
+
+      updateSlides();
+      setInterval(shiftSlide, 3000);
+  });
+</script>
+
 
 <h2><b>Brief Introduction</b></span></font></h2>
 <p>
